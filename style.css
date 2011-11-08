@@ -1,0 +1,569 @@
+@import url("assets/normalize.css");
+
+@import url("assets/prettify/prettify.css");
+
+@import url("assets/chosen.css");
+/*  
+Theme Name: Ajax Framework
+Theme URI: http://johnsardine.com/
+Version: 0.6
+Description: A simple base to build small ajax websites
+Author: João Sardinha
+Author URI: http://johnsardine.com
+Tags:
+*/
+.cf,
+nav ul,
+#target,
+.steps ol li,
+.icon-nav {
+  zoom: 1;
+}
+.cf:before,
+nav ul:before,
+#target:before,
+.steps ol li:before,
+.icon-nav:before,
+.cf:after,
+nav ul:after,
+#target:after,
+.steps ol li:after,
+.icon-nav:after {
+  content: "";
+  display: table;
+}
+.cf:after,
+nav ul:after,
+#target:after,
+.steps ol li:after,
+.icon-nav:after {
+  clear: both;
+}
+body {
+  margin: 0 auto;
+  color: #444;
+  font-family: sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  *font-size: small;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAD0lEQVQImWNgoBRI0UA7AAtAADWKwA/LAAAAAElFTkSuQmCC');
+  padding: 60px 0 15px 0;
+  background-attachment: fixed;
+}
+/* !Hyperlinks */
+a {
+  -webkit-transition: all ease-in-out 0.3s;
+  -moz-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+a, a:active, a:visited {
+  color: #f06529;
+  text-decoration: none;
+}
+a:hover {
+  color: #e34c26;
+  text-decoration: underline;
+  text-shadow: 0 0 3px rgba(227, 76, 38, 0.5);
+}
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  -webkit-transition: all ease-in-out 0.3s;
+  -moz-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+a:hover img {
+  opacity: .8;
+  filter: alpha(opacity=80);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+}
+/* Alignment */
+.textcenter {
+  display: block;
+  text-align: center;
+}
+.textright {
+  display: block;
+  text-align: right;
+}
+img {
+  margin: 0;
+  height: auto;
+  width: auto;
+}
+p img {
+  margin-bottom: 0;
+}
+.alignleft, img.alignleft {
+  display: inline;
+  float: left;
+}
+.alignright, img.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1em;
+}
+.aligncenter, img.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Blockquote */
+blockquote {
+  border-left: 3px solid;
+  margin: 1em 20px;
+  padding-left: 20px;
+  background: rgba(255, 255, 255, 0.5);
+}
+/* Content Zones */
+.inside {
+  margin: 0 auto;
+  width: 600px;
+}
+#target {
+  position: relative;
+}
+/* Header */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+#header > div {
+  margin: 0 auto;
+  width: 620px;
+  height: 30px;
+  min-width: 290px;
+  background: #333;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  -webkit-border-radius: 0 0 3px 3px;
+  border: solid #666;
+  border-width: 0 1px 1px 1px;
+}
+#header > div #logo {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 0 0 0 3px;
+  -moz-border-radius: 0 0 0 3px;
+  -webkit-border-radius: 0 0 0 3px;
+}
+#header > div #logo img {
+  box-shadow: 0 0 0 transparent;
+  -moz-box-shadow: 0 0 0 transparent;
+  -webkit-box-shadow: 0 0 0 transparent;
+}
+#header > div #logo:hover {
+  background: #666;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+#header > div nav {
+  float: right;
+}
+#header > div nav ul {
+  margin: 0;
+  padding: 0;
+}
+#header > div nav ul li {
+  display: inline-block;
+  list-style: none;
+  float: left;
+}
+#header > div nav ul li a {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  color: #eee;
+  border-left: 1px solid #666;
+}
+#header > div nav ul li a:hover, #header > div nav ul li a.current {
+  text-shadow: none;
+  text-decoration: none;
+  color: #fff;
+  background: #e34c26;
+}
+#header > div nav ul li a:focus {
+  outline: none;
+}
+#header > div nav ul li:last-child a {
+  border-radius: 0 0 3px 0;
+  -moz-border-radius: 0 0 3px 0;
+  -webkit-border-radius: 0 0 3px 0;
+}
+/* Page Title */
+.title {
+  font-size: 3em;
+  text-align: center;
+  margin: 30px 0 40px 0;
+  color: #fcfcfc;
+  /* text-shadow: 0 0 3px rgba(0,0,0,0.5); */
+
+  text-shadow: 0 2px 0 #e9b90f, 0 4px 0 #c52115, 0 4px 5px rgba(0, 0, 0, 0.8);
+}
+/* Separators */
+.separator {
+  border-bottom: 2px solid;
+  padding-bottom: 6px;
+}
+/* Footer */
+#footer {
+  margin-top: 1.5em;
+  border-top: 1px dotted;
+  text-align: right;
+}
+/* Unpin section */
+.free {
+  position: absolute;
+}
+/* Sections Nav */
+#sections {
+  margin: 0 auto;
+  width: 300px;
+  padding: 0 0 20px 0;
+}
+#sections li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#sections a {
+  background: #fff;
+  border: 1px solid #f06529;
+  display: block;
+  font-size: 1.3em;
+  padding: 10px 0;
+  text-align: center;
+  margin-bottom: 10px;
+  text-decoration: none;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+#sections a:hover {
+  border-color: #e34c26;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+/* Loading */
+#loading {
+  height: 100px;
+  width: 100%;
+  background: url(assets/loader.png) 48% 47% no-repeat;
+}
+/* Error Message */
+@-webkit-keyframes changeColor {
+  50% {
+    border-color: #E6DB55;
+    background-color: #FFFFE0;
+  }
+}
+.error {
+  padding: 0 20px;
+  margin-bottom: 30px;
+  border: 1px solid;
+  border-color: #ccc;
+  background-color: #fff;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  -webkit-animation: changeColor 3s infinite;
+}
+/* Code Styling */
+pre {
+  padding: 5px 10px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+pre ol {
+  padding-left: 30px;
+}
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  background: #ffffff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  padding-bottom: 23px;
+  /* Close button positioning */
+
+}
+.modal:before, .modal:after {
+  content: "";
+  display: block;
+  left: -1px;
+  width: inherit;
+  height: 5px;
+  position: absolute;
+  z-index: -12;
+  background: #ffffff;
+  padding: 20px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  -webkit-border-radius: 0 0 3px 3px;
+}
+.modal:before {
+  bottom: 1px;
+}
+.modal:after {
+  bottom: 3px;
+}
+.modal .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.close {
+  height: 15px;
+  width: 15px;
+  display: block;
+  text-indent: -999em;
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+  background: url(assets/close.png) top left no-repeat;
+}
+.close:hover {
+  background-position: bottom left;
+}
+.close:focus {
+  outline: none;
+}
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.9);
+}
+/* Steps List */
+ol.steps, ol.steps ol {
+  counter-reset: li;
+  /* Initiate a counter */
+
+  margin-left: 0;
+  /* Remove the default left margin */
+
+  padding-left: 0;
+  /* Remove the default left padding */
+
+}
+ol.steps > li, ol.steps ol > li {
+  position: relative;
+  /* Create a positioning context */
+
+  margin: 0 0 6px 2em;
+  /* Give each list item a left margin to make room for the numbers */
+
+  padding: 0 0 4px 16px;
+  /* Add some spacing around the content */
+
+  list-style: none;
+  /* Disable the normal item numbering */
+
+  border-top: 2px solid;
+}
+ol.steps > li:before, ol.steps ol > li:before {
+  content: counter(li);
+  /* Use the counter as content */
+
+  counter-increment: li;
+  /* Increment the counter by 1 */
+
+  /* Position and style the number */
+
+  position: absolute;
+  top: -2px;
+  left: -2em;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 2em;
+  /* Some space between the number and the content in browsers that support
+			generated content but not positioning it (Camino 2 is one example) */
+
+  margin-right: 8px;
+  line-height: 3.7em;
+  height: 4em;
+  border-top: 2px solid #444;
+  border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  -webkit-border-radius: 0 0 3px 3px;
+  color: #fff;
+  background: #444;
+  font-weight: bold;
+  text-align: center;
+}
+ol.steps > li:before {
+  height: 100%;
+  background: #f06529;
+}
+/* Steps Index */
+ol.index, ol.index ol {
+  margin: 0;
+  padding: 0 0 0 27px;
+}
+ol.index li, ol.index ol li {
+  font-weight: bold;
+  margin: 3px 0;
+}
+ol.index li small, ol.index ol li small {
+  display: block;
+  color: #666;
+  font-size: .9em;
+  font-weight: normal;
+}
+/* Target: IE7 */
+.ie7 #header #logo {
+  display: block;
+  float: left;
+  width: 163px;
+}
+.ie7 .modal#ie-notice {
+  display: block;
+  width: 400px;
+}
+.ie7 .modal#ie-notice:before, .ie7 .modal#ie-notice:after {
+  width: inherit;
+}
+.ie7 .overlay {
+  display: block;
+}
+.ie7 ol.steps li {
+  border-top: none;
+}
+.ie7 ol.steps li h2, .ie7 ol.steps li h3 {
+  border-bottom: 2px solid;
+  padding-top: 5px;
+  padding-bottom: 8px;
+}
+/* Nav Arrows */
+.icon-nav a {
+  float: left;
+}
+.icon-nav span {
+  display: none;
+}
+.previous, .next {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  text-indent: -999em;
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+}
+.previous:hover, .next:hover {
+  background-position: bottom;
+}
+.previous {
+  background: url(assets/previous.png);
+}
+.next {
+  background: url(assets/next.png);
+}
+.main {
+  height: 15px;
+  width: 15px;
+  display: block;
+  text-indent: -999em;
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+  background: url(assets/close-1.png) top left no-repeat;
+}
+.main:hover {
+  background-position: bottom left;
+}
+.main:focus {
+  outline: none;
+}
+/* Alignment exception */
+h2.separator + .icon-nav {
+  position: absolute;
+  right: 0;
+  top: 16px;
+}
+/* Media Block */
+.media {
+  margin: 10px;
+  padding: 0;
+}
+.media .bd {
+  overflow: hidden;
+  _overflow: visible;
+  zoom: 1;
+  margin-bottom: 10px;
+}
+.media .img {
+  float: left;
+  margin-right: 10px;
+}
+.media .img img {
+  display: block;
+}
+.media .imgExt {
+  float: right;
+  margin-left: 10px;
+}
+.media li {
+  position: relative;
+  list-style: none;
+}
+.media h3 {
+  margin-bottom: .3em;
+}
+.media * {
+  margin-top: 0;
+}
+.media .uiControls {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.media li:hover .uiControls {
+  display: block;
+}
