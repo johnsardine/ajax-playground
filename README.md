@@ -14,3 +14,5 @@
 
 - Allow for inline navigation with hashes, FAQ style.
 - Style it in a flexible way.
+
+**Demo:** <http://ggg.com/>
