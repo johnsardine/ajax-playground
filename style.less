@@ -9,30 +9,17 @@ Tags:
 */
 
 //import
-@import url("assets/normalize.css");
+@import url("assets/less/mixins.less");
+@import url("assets/less/normalize.less");
 @import url("assets/prettify/prettify.css");
-@import url("assets/chosen.css");
 
 //Page Width
 @pageWidth: 600px;
 
-//border radius
-.border-radius (@radius: 3px) {
-  border-radius: @radius;
-  -moz-border-radius: @radius;
-  -webkit-border-radius: @radius;
-}
-.box-shadow (@shadow) {
-  box-shadow: @shadow;
-  -moz-box-shadow: @shadow;
-  
-  -webkit-box-shadow: @shadow;
-}
-.transition (@transition: all ease-in-out 0.3s) {
-	-webkit-transition: @transition;
-	   -moz-transition: @transition;
-			transition: @transition;
-}
+//Links
+@linkColor: #0069D6;
+@linkColorHover: #0050A3;
+
 
 //clear elements
 .cf,
@@ -57,8 +44,8 @@ body {
 	margin: 0 auto;
 	color: #444;
 	font-family: sans-serif;
-	font-size: 12px;
-	line-height: 18px;
+	font-size: 13px;
+	line-height: 20px;
 	*font-size:small;
 	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAD0lEQVQImWNgoBRI0UA7AAtAADWKwA/LAAAAAElFTkSuQmCC');
 	
@@ -68,25 +55,24 @@ body {
 
 /* !Hyperlinks */
 a {
-	.transition();
+	.transition-all();
 }
 a,
 a:active,
 a:visited {
-	color: #f06529;
+	color: @linkColor;
 	text-decoration: none;
 }
 a:hover {
-	color: #e34c26;
+	color: @linkColorHover;
 	text-decoration: underline;
-	text-shadow: 0 0 3px rgba(227, 76, 38, 0.5);
 }
 
 /* Images */
 img {
 	max-width: 100%;
 	height: auto;
-	.transition(all ease-in-out .3s);
+	.transition-all(all ease-in-out .3s);
 	.box-shadow(0 1px 3px rgba(0,0,0,0.4));
 }
 a {
@@ -98,6 +84,15 @@ a {
 		}
 	}
 }
+
+/* 
+ * These selection declarations have to be separate
+ * No text-shadow: twitter.com/miketaylr/status/12228805301
+ * Also: hot pink!
+ */
+
+::-moz-selection { background: @linkColor; color: #fff; text-shadow: none; }
+::selection { background: @linkColor; color: #fff; text-shadow: none; }
 
 /* Alignment */
 .textcenter {
@@ -163,18 +158,18 @@ blockquote {
 	left: 0;
 	right: 0;
 	z-index: 999;
+	
+	
+	background: #333;
+	.box-shadow(0 1px 3px rgba(0,0,0,0.2));
+	border: solid #666;
+	border-width: 0 1px 1px 1px;
 }
 #header>div {
 	margin: 0 auto;
 	width: @pageWidth + 20px;
 	height: 30px;
 	min-width: 290px;
-	
-	background: #333;
-	.box-shadow(0 1px 3px rgba(0,0,0,0.2));
-	.border-radius(0 0 3px 3px);
-	border: solid #666;
-	border-width: 0 1px 1px 1px;
 	
 	#logo {
 		display: inline-block;
@@ -185,7 +180,7 @@ blockquote {
 		
 		
 		color: #fff;
-		.border-radius(0 0 0 3px);
+		//.border-radius(0 0 0 3px);
 		
 		img {
 			.box-shadow( 0 0 0 transparent);
@@ -234,24 +229,12 @@ blockquote {
 				}
 				
 				&:last-child a {
-					.border-radius(0 0 3px 0);
+					//.border-radius(0 0 3px 0);
 				}
 			}
 		}
 	}
 
-}
-
-/* Page Title */
-.title {
-	font-size: 3em;
-	text-align: center;
-	margin: 30px 0 40px 0;
-	
-	color: #fcfcfc;
-	
-	/* text-shadow: 0 0 3px rgba(0,0,0,0.5); */
-	text-shadow: 0 2px 0 rgba(233,185,15,1), 0 4px 0 rgba(197,33,21,1), 0 4px 5px rgba(0,0,0,0.8);
 }
 /* Separators */
 .separator {
@@ -311,12 +294,12 @@ blockquote {
 }
 
 /* Error Message */
-@-webkit-keyframes changeColor {
-	50% {
-		border-color: #E6DB55;
-		background-color: #FFFFE0;
-	}
-}
+//@-webkit-keyframes changeColor {
+//	50% {
+//		border-color: #E6DB55;
+//		background-color: #FFFFE0;
+//	}
+//}
 .error {
 	padding: 0 20px;
 	margin-bottom: 30px;
@@ -362,6 +345,7 @@ pre {
 	    width: inherit;
 	    height: 5px;
 	    position: absolute;
+	    right: -1px;
 	    z-index: -12;
 	    
 	    background: rgba(0255,255,255,1);
@@ -390,7 +374,7 @@ pre {
 	width: 15px;
 	display: block;
 	text-indent: -999em;
-	.transition( none );
+	.transition-all( none );
 	background: url(assets/close.png) top left no-repeat;
 	
 	&:hover {
@@ -527,7 +511,7 @@ ol.index ol {
 	height: 15px;
 	text-indent: -999em;
 	
-	.transition(none);
+	.transition-all(none);
 	
 	&:hover {
 		background-position: bottom;
@@ -544,7 +528,7 @@ ol.index ol {
 	width: 15px;
 	display: block;
 	text-indent: -999em;
-	.transition( none );
+	.transition-all( none );
 	background: url(assets/close-1.png) top left no-repeat;
 	
 	&:hover {

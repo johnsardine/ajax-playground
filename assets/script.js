@@ -1,3 +1,5 @@
+//@codekit-prepend "jquery.js", "jquery.history.js", "jquery.cookie.js", "prettify/prettify.js";
+
 jQuery(document).ready(function () {
 	
 	// PageLoad function
@@ -42,7 +44,6 @@ jQuery(document).ready(function () {
 			setTimeout(function () {
 				jQuery(target).load(hash + ".html", function (response, status, xhr) {
 					prettyPrint();
-					$(".chzn-select").chosen();
 					jQuery('a[href="#"]').click(function () { return false; });
 					if (status === "error") {
 						var msg = "Sorry but there was an error: ";
