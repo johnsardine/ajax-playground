@@ -22,7 +22,7 @@ Tags:
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
- */ 	
+ */
 /* =============================================================================
    HTML5 element display
    ========================================================================== */
@@ -372,7 +372,7 @@ body {
   font-size: 13px;
   line-height: 20px;
   *font-size: small;
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAD0lEQVQImWNgoBRI0UA7AAtAADWKwA/LAAAAAElFTkSuQmCC');
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAFklEQVQImWNgYGBg+PTp038GogBWlQA2kQerc92tOQAAAABJRU5ErkJggg==');
   padding: 60px 0 15px 0;
   background-attachment: fixed;
 }
@@ -464,7 +464,7 @@ blockquote {
 /* Content Zones */
 .inside {
   margin: 0 auto;
-  width: 600px;
+  width: 800px;
 }
 #target {
   position: relative;
@@ -486,7 +486,7 @@ blockquote {
 }
 #header > div {
   margin: 0 auto;
-  width: 620px;
+  width: 820px;
   height: 30px;
   min-width: 290px;
 }
@@ -534,7 +534,7 @@ blockquote {
   text-shadow: none;
   text-decoration: none;
   color: #fff;
-  background: #e34c26;
+  background: #0069d6;
 }
 #header > div nav ul li a:focus {
   outline: none;
@@ -778,11 +778,6 @@ ol.index li small, ol.index ol li small {
   font-weight: normal;
 }
 /* Target: IE7 */
-.ie7 #header #logo {
-  display: block;
-  float: left;
-  width: 163px;
-}
 .ie7 .modal#ie-notice {
   display: block;
   width: 400px;
@@ -887,5 +882,12 @@ h2.separator + .icon-nav {
   right: 0;
 }
 .media li:hover .uiControls {
+  display: block;
+}
+/* ==== * Helpers * ==== */
+.js .no-js {
+  display: none;
+}
+.no-js .no-js {
   display: block;
 }

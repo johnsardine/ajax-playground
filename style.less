@@ -14,12 +14,11 @@ Tags:
 @import url("assets/prettify/prettify.css");
 
 //Page Width
-@pageWidth: 600px;
+@pageWidth: 800px;
 
 //Links
 @linkColor: #0069D6;
 @linkColorHover: #0050A3;
-
 
 //clear elements
 .cf,
@@ -47,7 +46,7 @@ body {
 	font-size: 13px;
 	line-height: 20px;
 	*font-size:small;
-	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAD0lEQVQImWNgoBRI0UA7AAtAADWKwA/LAAAAAElFTkSuQmCC');
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAFklEQVQImWNgYGBg+PTp038GogBWlQA2kQerc92tOQAAAABJRU5ErkJggg==');
 	
 	padding: 60px 0 15px 0;
 	background-attachment: fixed;
@@ -221,7 +220,7 @@ blockquote {
 						text-decoration: none;
 						
 						color: #fff;
-						background: #e34c26;
+						background: @linkColor;
 					}
 					&:focus {
 						outline: none;
@@ -460,13 +459,6 @@ ol.index ol {
 
 /* Target: IE7 */
 .ie7 {
-	#header {
-		#logo {
-			display: block;
-			float: left;
-			width: 163px;	
-		}
-	}
 	
 	.modal#ie-notice {
 		display: block;
@@ -593,4 +585,12 @@ h2.separator + .icon-nav {
 			display: block;
 		}
 	}
+}
+
+/* ==== * Helpers * ==== */
+.js .no-js {
+	display: none;
+}
+.no-js .no-js {
+	display: block;
 }
