@@ -464,7 +464,7 @@ blockquote {
 /* Content Zones */
 .inside {
   margin: 0 auto;
-  width: 800px;
+  width: 600px;
 }
 #target {
   position: relative;
@@ -486,7 +486,7 @@ blockquote {
 }
 #header > div {
   margin: 0 auto;
-  width: 820px;
+  width: 620px;
   height: 30px;
   min-width: 290px;
 }
